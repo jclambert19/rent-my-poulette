@@ -11,3 +11,9 @@
 /log/*
 !/log/.keep
 /tmp
+<<<<<<< HEAD
+=======
+
+# Ignore application configuration
+/config/application.yml
+>>>>>>> 4b833789c41f8ea31a3da1173176e7dca1b82fa7
