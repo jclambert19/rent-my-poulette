@@ -40,6 +40,6 @@ private
   end
 
   def booking_params
-    params.require(:booking).permit(:????)
+    params.require(:booking).permit(:starts_on, :ends_on, :accepted)
   end
 end
