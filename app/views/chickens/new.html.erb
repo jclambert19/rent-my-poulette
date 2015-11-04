@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6 col-sm-offset-3">
+      <h1>New Chicken</h1>
+      <%= simple_form_for(@chicken) do |f| %>
+    <%= f.input :name, placeholder: "Chicken" %>
+    <%= f.input :description %>
+    <%= f.input :price_per_day, placeholder: "15€" %>
+    <%= f.submit "add a chicken", class: "btn btn-primary"  %>
+
+
+    <% end %>
+    </div>
+  </div>
+</div>
