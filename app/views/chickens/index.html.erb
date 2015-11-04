@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row" style="background-color:blue">
+    <div class="col-sm-6">
+      OK
+    </div>
+    <div class="col-sm-6" style="background-color:red">
+      <div class="row placeholders">
+        <% @chickens.each do |chicken| %>
+          <div class="col-xs-6" style="background-color:green">
+            <%= chicken.name %>
+            <%= chicken.description %>
+            <%= chicken.address %>
+            <%= chicken.price_per_day %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

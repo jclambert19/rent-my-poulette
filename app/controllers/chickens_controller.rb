@@ -1,8 +1,8 @@
-class ChickenController < ApplicationController
+class ChickensController < ApplicationController
   before_action :set_chicken, only: [:show, :edit, :update, :destroy]
 
   def index
-    @chicken = Chicken.all
+    @chickens = Chicken.all
   end
 
   def show
@@ -40,6 +40,6 @@ private
   end
 
   def chicken_params
-    params.require(:chicken).permit(:????)
+    params.require(:chicken).permit(:name, :description, :address, :price_per_day, :user)
   end
 end
