@@ -7,9 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-Chicken.create(name: 'Marge', description: 'Super poulette', address: '26, rue pont noeuf', price_per_day: '6')
+# Chicken.create(name: 'Marge', description: 'Super poulette', address: '26, rue pont noeuf', price_per_day: '6')
 
-Chicken.create(name: 'Lisa', description: 'Mega poulette', address: '41, avenue saint de Nid', price_per_day: '12')
+# Chicken.create(name: 'Lisa', description: 'Mega poulette', address: '41, avenue saint de Nid', price_per_day: '12')
 
-Chicken.create(name: 'Maggie', description: 'Hyper poulette', address: '19, rue des cocottes', price_per_day: '9')
+# Chicken.create(name: 'Maggie', description: 'Hyper poulette', address: '19, rue des cocottes', price_per_day: '9')
 

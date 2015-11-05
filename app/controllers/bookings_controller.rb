@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: [:show, :edit, :update, :destroy]
+  before_action :set_booking, only: [:show, :new, :create, :edit, :update, :destroy]
 
   def index
     @booking = Booking.all
@@ -13,9 +13,9 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params)
+    @booking = @chicken.booking.new(booking_params)
     @booking.save
-    redirect_to bookings_path
+    redirect_to chicken_path
   end
 
   def edit
@@ -36,7 +36,7 @@ class BookingsController < ApplicationController
 private
 
   def set_booking
-    @booking = Booking.find(params[:id])
+    @chicken = Chicken.find(params[:chicken_id])
   end
 
   def booking_params

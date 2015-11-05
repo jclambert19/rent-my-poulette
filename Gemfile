@@ -20,6 +20,8 @@ gem 'devise'
 gem 'rails', '4.2.4'
 gem 'pg'
 gem 'figaro'
+gem 'aws-sdk', '< 2.0'
+gem 'paperclip'
 gem 'jbuilder', '~> 2.0'
 
 gem 'sass-rails', '~> 5.0'
