@@ -16,6 +16,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 ruby '2.2.3'
 
+gem "geocoder"
 gem 'devise'
 gem 'rails', '4.2.4'
 gem 'pg'
