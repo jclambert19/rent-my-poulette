@@ -16,6 +16,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 ruby '2.2.3'
 
+gem "geocoder"
 gem 'devise'
 gem 'rails', '4.2.4'
 gem 'pg'
@@ -23,7 +24,6 @@ gem 'figaro'
 gem 'aws-sdk', '< 2.0'
 gem 'paperclip'
 gem 'jbuilder', '~> 2.0'
-
 gem 'sass-rails', '~> 5.0'
 gem 'jquery-rails'
 gem 'uglifier'
@@ -31,6 +31,12 @@ gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
+gem 'gmaps4rails'
+gem 'coffee-rails'
+
+source 'https://rails-assets.org' do
+  gem "rails-assets-underscore"
+end
 
 group :development, :test do
   gem 'web-console', '~> 2.0'

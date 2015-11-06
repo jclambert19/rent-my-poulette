@@ -16,6 +16,39 @@
           </div>
         <% end %>
       </div>
+
+      <div class="row placeholders">
+        <% @chickens.each do |chicken| %>
+          <div class="col-xs-6">
+            <%= chicken.name %>
+            <%= chicken.description %>
+            <%= chicken.address %>
+            <%= chicken.price_per_day %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="col-sm-6" >
+      <div id="map"></div>
     </div>
   </div>
 </div>
+
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    $(document).on('ready', function() {
+      var handler = Gmaps.build('Google');
+      handler.buildMap({ internal: { id: 'map' } }, function(){
+        markers = handler.addMarkers([
+            { "lat": 48.8426531, "lng": 2.3248288 },
+            { "lat": 48.8718757, "lng": 2.3500763 },
+            { "lat": 48.8755557, "lng": 2.3768895 },
+            { "lat": 48.8529369, "lng": 2.364178  }
+          ]);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+      });
+      })
+  <% end %>
+<% end %>
