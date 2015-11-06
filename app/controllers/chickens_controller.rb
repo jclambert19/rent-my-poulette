@@ -3,6 +3,8 @@ class ChickensController < ApplicationController
 
   def index
     @chickens = Chicken.all
+    # p "debug"
+    # p params[:destination]
   end
 
   def show

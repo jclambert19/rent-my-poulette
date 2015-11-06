@@ -6,6 +6,7 @@ class BookingsController < ApplicationController
   end
 
   def show
+
   end
 
   def new
@@ -13,9 +14,9 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = @chicken.booking.new(booking_params)
+    @booking = @chicken.bookings.new(booking_params)
     @booking.save
-    redirect_to chicken_path
+    redirect_to chicken_booking_path(@chicken, @booking)
   end
 
   def edit
