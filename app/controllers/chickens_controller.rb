@@ -2,9 +2,16 @@ class ChickensController < ApplicationController
   before_action :set_chicken, only: [:show, :edit, :update, :destroy]
 
   def index
-    @chickens = Chicken.all
-    # p "debug"
-    # p params[:destination]
+
+    @chickens = Chicken.where.not(latitude: nil)
+
+    # Let's DYNAMICALLY build the markers for the view.
+    @markers = Gmaps4rails.build_markers(@chickens) do |chicken, marker|
+      marker.lat chicken.latitude
+      marker.lng chicken.longitude
+    end
+
+
   end
 
   def show
