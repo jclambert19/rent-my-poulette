@@ -30,8 +30,16 @@ p {
 
 @import url(https://fonts.googleapis.com/css?family=Itim|Merienda|Lily+Script+One|Oleo+Script+Swash+Caps:700,400);
 
-#block1 {
+.block1 {
   background-color: #F7FAFA;
-  marging: 20px;
+  margin: 5px;
+  padding: 10px;
+}
+
+.mega-search-bar {
+  margin-left: auto;
+  margin-right: auto;
+  margin: 10px;
+  padding: 20px;
 }
 

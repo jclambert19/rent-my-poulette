@@ -3,10 +3,11 @@ class ChickensController < ApplicationController
 
   def index
 
-    @chickens = Chicken.where.not(latitude: nil)
+    # @chickens = Chicken.where.not(latitude: nil)
+    @chickens = Chicken.all
 
     # Let's DYNAMICALLY build the markers for the view.
-    @markers = Gmaps4rails.build_markers(@chickens) do |chicken, marker|
+    @markers = Gmaps4rails.build_markers(Chicken.where.not(latitude: nil)) do |chicken, marker|
       marker.lat chicken.latitude
       marker.lng chicken.longitude
     end

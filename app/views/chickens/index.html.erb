@@ -1,25 +1,27 @@
 <div class="container">
   <div class="row" style="background-color:">
-    <div class="col-sm-6" style="background-color:">
-      <div class="row placeholders">
+    <div class="col-xs-6">
+        <div class="row">
         <% @chickens.each do |chicken| %>
-          <div class="col-md-18" style="background-color:">
-            <div id="block1">
+          <div class="col-xs-6">
+              <div class="block1">
 
-              <%= image_tag chicken.picture.url(:medium) if chicken.picture? %>
-              <%= chicken.name %>
-              <%= chicken.description %>
-              <%= chicken.address %>
-              <%= chicken.price_per_day %>
-               <%= link_to "je loue", new_chicken_booking_path(chicken) %>
+                <%= image_tag chicken.picture.url(:medium) if chicken.picture? %>
+                <%= chicken.name %>
+                <%= chicken.description %>
+                <%= chicken.address %>
+                <%= chicken.price_per_day %>
+                 <%= link_to "je loue", new_chicken_booking_path(chicken) %>
 
-            </div>
+              </div>
+
           </div>
         <% end %>
-      </div>
+        </div>
+
     </div>
 
-    <div class="col-sm-6" >
+    <div class="col-xs-6" >
       <div id="map"></div>
     </div>
   </div>
