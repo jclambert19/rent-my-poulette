@@ -14,9 +14,12 @@ class ChickensController < ApplicationController
 
   def create
     @chicken = Chicken.new(chicken_params)
-    @chicken.save
+  if @chicken.save
     redirect_to chickens_path
+  else
+    render :new
   end
+end
 
   def edit
   end
@@ -27,7 +30,8 @@ class ChickensController < ApplicationController
   end
 
   def destroy
-    @chickens.delete
+
+    @chickens.destroy
     redirect_to chickens_path
   end
 
@@ -40,6 +44,7 @@ private
   end
 
   def chicken_params
-    params.require(:chicken).permit(:name, :description, :address, :price_per_day, :user)
+    params.require(:chicken).permit(:name, :description, :address, :price_per_day, :user, :picture)
   end
+
 end

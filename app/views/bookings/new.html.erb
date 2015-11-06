@@ -1,0 +1,7 @@
+      <%= simple_form_for [@chicken, @booking] do |f| %>
+    <%= f.input :begins_on, placeholder: "Chicken" %>
+    <%= f.input :ends_on %>
+    <%= f.input :accepted %>
+    <%= f.submit "Je valide", class: "btn btn-primary"  %>
+    <% end %>
+

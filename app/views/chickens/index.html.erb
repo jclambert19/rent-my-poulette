@@ -4,10 +4,15 @@
       <div class="row placeholders">
         <% @chickens.each do |chicken| %>
           <div class="col-xs-6" style="background-color:">
+
+
+            <%= image_tag chicken.picture.url(:medium) if chicken.picture? %>
             <%= chicken.name %>
             <%= chicken.description %>
             <%= chicken.address %>
             <%= chicken.price_per_day %>
+             <%= link_to "je loue", new_chicken_booking_path(chicken) %>
+
           </div>
         <% end %>
       </div>
