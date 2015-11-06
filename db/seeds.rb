@@ -6,10 +6,11 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+User.destroy_all
+Chicken.destroy_all
+Booking.destroy_all
 
-# Chicken.create(name: 'Marge', description: 'Super poulette', address: '26, rue pont noeuf', price_per_day: '6')
-
-# Chicken.create(name: 'Lisa', description: 'Mega poulette', address: '41, avenue saint de Nid', price_per_day: '12')
-
-# Chicken.create(name: 'Maggie', description: 'Hyper poulette', address: '19, rue des cocottes', price_per_day: '9')
+Chicken.create(name: 'Marge', description: 'Super poulette', address: 'Place Charles de Gaulle, 75008 Paris', price_per_day: '6')
+Chicken.create(name: 'Lisa', description: 'Mega poulette', address: '55 Rue du Faubourg Saint-Honoré, 75008 Paris', price_per_day: '12')
+Chicken.create(name: 'Maggie', description: 'Hyper poulette', address: '33 Avenue du Maine, 75015 Paris', price_per_day: '9')
 

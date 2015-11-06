@@ -37,12 +37,12 @@ ActiveRecord::Schema.define(version: 20151105141203) do
     t.integer  "user_id"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
+    t.float    "latitude"
+    t.float    "longitude"
     t.string   "picture_file_name"
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
-    t.float    "latitude"
-    t.float    "longitude"
   end
 
   add_index "chickens", ["user_id"], name: "index_chickens_on_user_id", using: :btree

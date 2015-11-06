@@ -3,27 +3,17 @@
     <div class="col-sm-6" style="background-color:">
       <div class="row placeholders">
         <% @chickens.each do |chicken| %>
-          <div class="col-xs-6" style="background-color:">
+          <div class="col-md-18" style="background-color:">
+            <div id="block1">
 
+              <%= image_tag chicken.picture.url(:medium) if chicken.picture? %>
+              <%= chicken.name %>
+              <%= chicken.description %>
+              <%= chicken.address %>
+              <%= chicken.price_per_day %>
+               <%= link_to "je loue", new_chicken_booking_path(chicken) %>
 
-            <%= image_tag chicken.picture.url(:medium) if chicken.picture? %>
-            <%= chicken.name %>
-            <%= chicken.description %>
-            <%= chicken.address %>
-            <%= chicken.price_per_day %>
-             <%= link_to "je loue", new_chicken_booking_path(chicken) %>
-
-          </div>
-        <% end %>
-      </div>
-
-      <div class="row placeholders">
-        <% @chickens.each do |chicken| %>
-          <div class="col-xs-6">
-            <%= chicken.name %>
-            <%= chicken.description %>
-            <%= chicken.address %>
-            <%= chicken.price_per_day %>
+            </div>
           </div>
         <% end %>
       </div>
@@ -38,17 +28,12 @@
 <% content_for(:after_js) do %>
   <%= javascript_tag do %>
     $(document).on('ready', function() {
-      var handler = Gmaps.build('Google');
+      handler = Gmaps.build('Google');
       handler.buildMap({ internal: { id: 'map' } }, function(){
-        markers = handler.addMarkers([
-            { "lat": 48.8426531, "lng": 2.3248288 },
-            { "lat": 48.8718757, "lng": 2.3500763 },
-            { "lat": 48.8755557, "lng": 2.3768895 },
-            { "lat": 48.8529369, "lng": 2.364178  }
-          ]);
+        markers = handler.addMarkers(<%= raw @markers.to_json %>);
         handler.bounds.extendWith(markers);
         handler.fitMapToBounds();
       });
-      })
+    })
   <% end %>
 <% end %>
