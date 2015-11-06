@@ -33,6 +33,7 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'gmaps4rails'
 gem 'coffee-rails'
+gem 'bootstrap-datepicker-rails'
 
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"

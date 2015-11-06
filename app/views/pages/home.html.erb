@@ -3,9 +3,36 @@
   <div class="banner-shadow"></div>
   <div class="banner-content fade-and-slide">
     <h1>Salut ma poule </h1>
+
     <%= link_to t(".top_call_to_action", default: "add a chicken"), new_chicken_path , class: "navbar-wagon-item navbar-wagon-button btn" %>
+
   </div>
 </div>
+
+
+<div id="searchbar">
+<form action="/chickens" method="get">
+ <input type="date" class='datepicker' value="2015-11-06" name="checkin">
+ <input type="date" class='datepicker' value="2015-12-06" name="checkout">
+ <input type="hidden" id="my_hidden_input">
+  <input class="champ" type="text" placeholder="Ou voulez-vous aller ?" name="destination">
+ <button type="submit" class="btn">Search</button>
+</form>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
 
 <footer >
    <div class="col-sm-7 col-xs-12 footer-block">

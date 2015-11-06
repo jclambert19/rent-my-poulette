@@ -2,6 +2,7 @@ class ChickensController < ApplicationController
   before_action :set_chicken, only: [:show, :edit, :update, :destroy]
 
   def index
+
     @chickens = Chicken.where.not(latitude: nil)
 
     # Let's DYNAMICALLY build the markers for the view.
@@ -9,6 +10,7 @@ class ChickensController < ApplicationController
       marker.lat chicken.latitude
       marker.lng chicken.longitude
     end
+
 
   end
 
